@@ -1,6 +1,6 @@
 import pygame  # импортируем pygame для создания игры
 import world  # импортируем world для отрисовки мира игры
-import player
+import player  # импортируем player для работы с персонажем
 
 pygame.init()  # инициализируем pygame
 
@@ -18,7 +18,7 @@ sun = pygame.image.load('image/sun.png')  # загружаем солнце
 clock = pygame.time.Clock()  # создаём часы, которые пригодятся для отслеживания времени работы программы
 
 map_world = world.create_world()  # создаём список объектов для отрисовки
-character = player.create_player()
+character = player.create_player()  # создаём игрока, которым можно управлять
 run = True  # переменная run отвечает за работу игрового цикла
 while run:  # игровой цикл
     # через pygame.event.get() получаем все события(нажатия на клавиатуру, мышку и т.п.)
@@ -30,7 +30,7 @@ while run:  # игровой цикл
     screen.blit(sun, (100, 100))  # отрисовка солнца
     world.draw_world(screen, map_world)  # отрисовка элементов мира
     world.draw_grid(screen, screen_width, screen_height)  # отрисовка сетки
-    player.update_player(screen)
+    player.update_player(screen)  # обновляем состояние персонажа
     pygame.display.update()  # обновление экрана, чтобы увидеть новые рисунки
     clock.tick(FPS)  # ограничение ФПС
 pygame.quit()  # закрытие игры после того, как игровой цикл
