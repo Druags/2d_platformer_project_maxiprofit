@@ -30,7 +30,7 @@ while run:  # игровой цикл
     screen.blit(sun, (100, 100))  # отрисовка солнца
     world.draw_world(screen, map_world)  # отрисовка элементов мира
     world.draw_grid(screen, screen_width, screen_height)  # отрисовка сетки
-    player.update_player(screen)  # обновляем состояние персонажа
+    player.update_player(screen, map_world)  # обновляем состояние персонажа
     pygame.display.update()  # обновление экрана, чтобы увидеть новые рисунки
     clock.tick(FPS)  # ограничение ФПС
 pygame.quit()  # закрытие игры после того, как игровой цикл
