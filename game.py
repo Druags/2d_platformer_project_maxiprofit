@@ -1,6 +1,10 @@
 import pygame  # импортируем pygame для создания игры
 import world  # импортируем world для отрисовки мира игры
 import player  # импортируем player для работы с персонажем
+import enemy
+import coin
+import lava
+
 
 pygame.init()  # инициализируем pygame
 
@@ -29,6 +33,10 @@ while run:  # игровой цикл
     screen.blit(background, (0, 0))  # отрисовка заднего фона
     screen.blit(sun, (100, 100))  # отрисовка солнца
     world.draw_world(screen, map_world)  # отрисовка элементов мира
+    enemy.draw_enemy(screen)
+    enemy.update_enemy()
+    coin.draw_coin(screen)
+    lava.draw_lava(screen)
     world.draw_grid(screen, screen_width, screen_height)  # отрисовка сетки
     player.update_player(screen, map_world)  # обновляем состояние персонажа
     pygame.display.update()  # обновление экрана, чтобы увидеть новые рисунки

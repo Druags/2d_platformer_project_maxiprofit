@@ -1,4 +1,8 @@
 import pygame
+import enemy
+import coin
+import lava
+
 
 world_data = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -42,6 +46,13 @@ def create_world():  # функция отвечает за создание м�
                 # с помощью метода append добавляем пару значений в конец списка
             elif world_data[r][c] == 2:  # проверяем, что элемент равен двойке
                 world_map.append((grass, (c * tile_size, r * tile_size)))  # добавляем траву и её координаты
+            elif world_data[r][c] == 3:
+                enemy.create_enemy(c * tile_size, r * tile_size)
+            elif world_data[r][c] == 7:
+                coin.create_coin(c * tile_size, r * tile_size)
+            elif world_data[r][c] == 6:
+                lava.create_lava(c * tile_size, r * tile_size)
+
     return world_map  # возвращаем список world_map, чтобы можно было получить его в файле game.py
 
 
