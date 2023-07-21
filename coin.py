@@ -1,4 +1,5 @@
 import pygame
+from player import rect_player
 
 coin_list = []
 coin_img = pygame.transform.scale(pygame.image.load('image/coin.png'), (40, 40))
@@ -14,3 +15,5 @@ def create_coin(x, y):
 def draw_coin(screen):
     for coin in coin_list:
         screen.blit(coin_img, coin)
+
+

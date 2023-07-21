@@ -1,5 +1,6 @@
 import pygame
 
+
 pygame.init()
 
 img_player = None  # переменная, в которой будет храниться картинка игрока
@@ -17,6 +18,9 @@ images_left = [pygame.transform.flip(images_right[0], True, False),
 index = 0
 direction = 0
 counter = 0
+
+
+
 
 
 def create_player():  # функция, создающая игрока
